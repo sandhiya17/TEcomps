@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>9</title>
+
+	<style type="text/css">
+		label {
+			padding: 5px;
+		}
+	</style>
+	
+</head>
+<body>
+	<form name="inp">
+		<label>Array (numbers 1-9): </label>
+		<input type="text" name="arr_n" placeholder="[3,2,5,4]"> <br><br>
+		<input type="button" name="sort" value="Sort" onclick="sorting()">
+	</form>
+	<p id="demo" style="color: red;">Sorted result will be displayed here</p>
+
+	<script type="text/javascript">
+		var max = 10;
+		var arr = [];
+		var c = 0;
+		function get_number() {
+			var arr_inp = document.forms["inp"]["arr_n"].value;
+			arr = arr_inp.match(/\d/gi);
+		}
+		function array_size() { 
+			var i=0;
+			while (arr[i] != null) {
+				i++;
+			}
+			c = i;					
+		}
+		function sorting() {
+			get_number();
+			array_size();
+			for (var i = 0; i < c; i++)   
+			{  
+				for (var j = i + 1; j < arr.length; j++)   
+				{  
+					var temp = 0;  
+					if (arr[i] > arr[j])   
+					{  
+						temp = arr[i];  
+						arr[i] = arr[j];  
+						arr[j] = temp;  
+					}  
+				}   
+			}
+			
+			alert(c);
+			document.getElementById("demo").innerHTML = arr;
+		}
+	</script>
+</body>
+</html>

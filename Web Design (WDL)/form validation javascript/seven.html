@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		.conten {
+			align-items: center;
+		}
+		td {
+			padding: 10px;
+		}
+		 label {
+			font-size: 24px;
+		}
+		.butn {
+			width: 120px;
+			height: 30px;
+		}
+	</style>
+	<title>7</title>
+</head>
+<body bgcolor="#99C8F7" style="color: red;">
+	<h1 align="center">ENTRY FORM</h1>
+	<div class="conten">
+		<form name="vdn">
+			<table>
+				<tr>
+					<td> <label> Enter your name: </label> </td>
+					<td> <input type="text" name="fname"></td>
+					<td id="outp" rowspan="7" style="padding-top: 60; border-style: solid; border-width: 1px; font-size: 24px;" colspan="2">Output here</td>
+				</tr>
+				<tr>
+					<td> <label>Enter your age:</label>  </td>
+					<td> <input type="text" name="age"></td>
+				</tr>
+				<tr>
+					<td> <label>Enter your email:</label></td>
+					<td> <input type="text" name="mail"></td>
+				</tr>
+				<tr>
+					<td> <label>Enter your address:</label>  </td>
+					<td> <textarea rows="4" cols="40" name="addr"></textarea></td>
+				</tr>
+				<tr>
+					<td> <label>gender:</label> </td>
+					<td> <input type="radio" name="gen" value="male"> male <br> <input type="radio" name="gen" value="female"> female <br> <input type="radio" name="gen" value="other"> other</td>
+				</tr>
+				<tr>
+					<td> <label> languages known:</label> </td>
+					<td> <input type="checkbox" name="lang" value="c"> C <br> <input type="checkbox" name="lang" value="c++"> C++ <br> <input type="checkbox" name="lang" value="vb"> VB <br> <input type="checkbox" name="lang" value="java"> JAVA <br> <input type="checkbox" name="lang" value="asp"> ASP <br> <input type="checkbox" name="lang" value="other"> other</td>
+				</tr>
+				<tr>
+					<td> <label>password:</label> </td>
+					<td> <input type="password" name="pass"></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input class="butn" type="reset" name="re"> <button class="butn" type="button" name="sb" onclick="fcheck()">Submit</button></td>
+				</tr>
+			</table>
+			
+		</form>
+	</div>
+
+	<script type="text/javascript" src="seven.js"></script>
+</body>
+</html>

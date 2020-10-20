@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sum jquery</title>
+
+</head>
+<body>
+
+	<p>first number: </p><input type="number" id="a">
+
+	<p>second number: </p><input type="number" id="b">
+
+	<p>sum: </p><input type="number" id="s">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$("#a").keyup( function() {
+	$("#s").val(  Number($("#a").val()) + Number($("#b").val())  ); } );
+    $("#b").keyup( function() {
+	$("#s").val(Number($("#a").val()) + Number($("#b").val()) ); } );
+</script>
+</body>
+</html>

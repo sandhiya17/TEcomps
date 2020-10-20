@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>eleven</title>
+  <style type="text/css">
+    #birthday {
+      height: 700px;
+      width: 100%;
+      background-image: url("bg-cake.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      cursor: pointer;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="birthday">
+  <h1 id="test" style="color: red;">click anywhere to open the card</h1>
+  </div>
+<script type="text/javascript">
+	//greeting card
+  document.getElementById("birthday").addEventListener("click", outp);
+  function outp() {
+    document.getElementById("birthday").style.backgroundImage = "url('confetti.gif')";
+    document.getElementById("birthday").style.cursor = "default";
+    document.getElementById("test").innerHTML = "Wish you a happy and prosperous year ahead";
+  }
+</script>
+</body>
+</html>
