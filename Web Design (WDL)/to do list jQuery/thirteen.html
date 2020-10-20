@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Q</title>
+	<style type="text/css">
+
+		.input-bar {
+			width: 40%;
+			margin-left: 30%;
+			height: 60px;
+			margin-top: 5%;
+			background-color: #0B2E52;
+			padding: 10px;
+			text-align: center;
+			border: solid 1px #ffffff;
+		}
+		.input-bar .entry {
+			height: 40px;
+			width: 360px;
+			font-size: 18px;
+			border-style: hidden;
+			padding: 5px;
+		}
+		.input-bar .add {
+			height: 42px;
+			width: 42px;
+			color:#5D96CF;
+			background-color: #ffffff;
+			border-style: hidden;
+			font-size: 20px;
+			margin-left: 10px;
+		}
+		.input-bar .add:hover {
+			cursor: pointer;
+			box-shadow: 1px 1px 5px #ffffff;
+		}
+		.list {
+			background:transparent;
+			height: 500px;
+			width: 50%;
+			margin-left: 25%;
+			margin-top: 15px;
+			padding: 10px;
+		}
+		.list .item {
+			background: #ffffff;
+			height: 40px;
+			width: 80%;
+			font-size: 25px;
+			border: solid 1px #000000;
+			margin-left: 40px;
+			padding: 10px;
+			margin-bottom: 10px;
+		}
+		.list .item:hover {
+			box-shadow: 2px 2px 10px #888888;
+			cursor: pointer;
+		}
+		.list .item .del {
+			background:red;
+			border: hidden;
+			float: right;
+			width: 50px;
+			height: 40px;
+			display: inline-block;
+			text-align: center;
+		}
+		.list .item .del:hover {
+			box-shadow: 2px 2px 10px #888888;
+		}
+	</style>
+</head>
+<body bgcolor="#B9DAFA">
+
+
+
+	<div class="input-bar">
+		<input type="text" class="entry" name="add-item" placeholder="Add task">
+		<button class="add">+</button>
+	</div>
+	<div class="list">
+		<div class="demo"></div>
+	</div>
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$( "button.add" ).on("click", function() {
+			var task = $("input.entry").val();
+			$( ".list" ).prepend( "<div class='item' onclick='strself(this)'>"+ task +"<div onclick='delself(this)' class='del'><img height='40px' width='40px' src='https://www.materialui.co/materialIcons/action/delete_white_192x192.png'/></div></div>" );
+			$("input.entry").val("");
+		});
+		
+		function delself(elem) {
+			$(elem).parent().remove();
+		}
+
+		function strself(elem) {
+			$(elem).css("text-decoration", "line-through");
+		}
+	</script>
+</body>
+</html>
