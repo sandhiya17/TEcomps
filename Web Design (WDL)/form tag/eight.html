@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>8</title>
+	<style type="text/css">
+		td {
+			padding: 2px;
+		}
+	</style>
+</head>
+<body>
+	<h2> Leave Application</h2>
+	<form name="imp">
+		<table>
+			<tr>
+				<td><label>Employee ID*</label></td>
+				<td><input type="text" name="empid" required="true"></td>
+			</tr>
+			<tr>
+				<td><label>Employee Name</label></td>
+				<td><input type="text" name="empname"></td>
+			</tr>
+			<tr>
+				<td><label>Department*</label></td>
+				<td>
+					<select name="dept">
+					  <option value="A">A</option>
+					  <option value="B">B</option>
+					  <option value="C">C</option>
+					  <option value="D">D</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td><label>Designation*</label></td>
+				<td><input type="text" name="desg"></td>
+			</tr>
+			<tr>
+				<td><label>Type of Leave*</label></td>
+				<td>
+					<select name="type_leave">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td><label>From Date*</label></td>
+				<td><input type="date" name="from_date"></td>
+				<td><label>To date*</label></td>
+				<td><input type="date" name="to_date"></td>
+			</tr>
+			<tr>
+				<td><label>No of days*</label></td>
+				<td><input type="text" name="num_days"></td>
+				<td><input type="button" id="calc" value="Get days" onclick="gd()"></td>
+			</tr>
+			<tr>
+				<td><label>Reason*</label></td>
+				<td><textarea name="res"></textarea></td>
+			</tr>
+			<tr>
+				<td><label>Phone*</label></td>
+				<td><input type="tel" name="telnum" pattern="[0-9]{10}"></td>
+			</tr>
+			<tr>
+				<td><label>Email*</label></td>
+				<td><input type="email" name="mail"></td>
+			</tr>
+			<tr>
+				<td><label>Address during leave period</label></td>
+				<td><textarea name="addr"></textarea></td>
+			</tr>
+			<tr>
+				<td><label>Details of alternate arrangement*</label></td>
+			</tr>
+			<tr>
+				<table>
+					<tr>
+						<th>Staff ID</th>
+						<th>Name</th>
+						<th>Department</th>
+						<th>Class</th>
+						<th>Subject</th>
+						<th>Lecture Time</th>
+						<th>Practical/tutorial</th>
+					</tr>
+					<tr>
+						<td><input type="text" name="sid1"></td>
+						<td><input type="text" name="n1"></td>
+						<td><input type="text" name="dep1"></td>
+						<td><input type="text" name="cl1"></td>
+						<td><input type="text" name="sub1"></td>
+						<td><input type="text" name="lec1"></td>
+						<td><input type="text" name="prac1"></td>
+					</tr>
+					<tr>
+						<td><input type="text" name="sid2"></td>
+						<td><input type="text" name="n2"></td>
+						<td><input type="text" name="dep2"></td>
+						<td><input type="text" name="cl2"></td>
+						<td><input type="text" name="sub2"></td>
+						<td><input type="text" name="lec2"></td>
+						<td><input type="text" name="prac2"></td>
+					</tr>
+				</table>
+			</tr>
+			<tr>
+				<td><input type="submit" name="submit">  <input type="reset" name="reset" value="Clear"></td>
+			</tr>
+		</table>
+	</form>
+	<script type="text/javascript">
+		function gd() {
+			var s = new Date();
+			var e = new Date();
+			s = document.forms["imp"]["from_date"].value;
+			e = document.forms["imp"]["to_date"].value;
+			
+			var ss = s.split("-");
+			var ee = e.split("-"); 
+			
+			var days = ee[2]-ss[2];
+			document.forms["imp"]["num_days"].value = days;
+		}
+	</script>
+</body>
+</html>
