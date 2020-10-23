@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>calendar</title>
+	<style type="text/css">
+		table, td {
+	  border: 1px solid black;
+	  border-collapse: collapse;
+	}
+	</style>
+</head>
+<body>
+
+<p>Enter Year:</p>
+
+<form name="imp">
+<input type="text" name="inp">
+<input type="button" onclick="test()" value="click">
+</form>
+
+
+<script>
+function test() {
+var y = document.forms["imp"]["inp"].value;
+var s = "Jan 1, ";
+var mt =["Jan", "Feb", "March", "April", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
+var dyt=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]; //starts with sunday because 0 is sunday
+var p = s.concat(y);
+var d = new Date(p);
+document.getElementById("demo").innerHTML = d;
+var m = d.getMonth()+1;
+var dt = d.getDate();
+var dy = d.getDay();
+for ( var i = m; i < 13; i++) 
+{
+	document.write("<div style='padding:20px;'>");
+	document.write("<table style='border: 1px solid black; border-collapse: collapse; width: 500px;'>");
+	document.write("<tr colspan=7> Month: " + mt[i-1] + " | Year: " + y + "</tr>" );
+	document.write("<tr>");
+	for (var a=0;a<7;a++)
+	{
+		document.write("<td>" + dyt[a] + "</td>");
+	}
+	document.write("</tr>");
+
+
+	if (i == 1 || i == 3 || i == 5 || i == 7 ||  i == 8 || i == 10 || i == 12) 
+	{
+		document.write("<tr>");
+		for (var j=0;j<dy;j++){
+			document.write("<td></td>"); //first printing blank cells for days before start day
+		}
+		for (var j = dt; j <32; j++) //printing actual dates
+		{
+			
+			document.write("<td style='border: 1px solid black; border-collapse: collapse;'>"+j+"</td>");
+			if(dy==6){
+				dy=0;
+				document.write("</tr><tr>"); //close row when last day of week reached
+			}
+			else {
+				dy++;
+			}
+			
+		}
+		document.write("</tr>");		
+	}
+	else if (i == 4 || i == 6 || i == 9 || i == 11) 
+	{
+		document.write("<tr>");
+		for (var j=0;j<dy;j++){
+			document.write("<td></td>");
+		}
+		for (var j = dt; j <31; j++) 
+		{
+			
+			document.write("<td style='border: 1px solid black; border-collapse: collapse;'>"+j+"</td>");
+			if(dy==6){
+				dy=0;
+				document.write("</tr><tr>");
+			}
+			else {
+				dy++;
+			}
+			
+		}
+		document.write("</tr>");
+	}
+	else if (i == 2) 
+	{
+		document.write("<tr>");
+		for (var j=0;j<dy;j++){
+			document.write("<td></td>");
+		}
+		for(var j = dt; j < 29; j++) 
+		{
+			
+			document.write("<td style='border: 1px solid black; border-collapse: collapse;'>"+j+"</td>");
+			if(dy==6){
+				dy=0;
+				document.write("</tr><tr>");
+			}
+			else {
+				dy++;
+			}
+		}
+		document.write("</tr>");
+	}
+	document.write("</table>");
+	document.write("</div>");
+	
+} 
+//document.getElementById("outp").innerHTML = dt;
+}
+</script>
+
+</body>
+</html>
